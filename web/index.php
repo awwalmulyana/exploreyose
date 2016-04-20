@@ -23,7 +23,7 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/ping ', function() use($app) {
-  $data = array( 'alive' => 'true');
+  $data = array( 'alive' => true);
    //$response->headers->set('Content-Type', 'application/json');
 	//return $response;
 	return json_encode($data);
