@@ -2,6 +2,8 @@
 
 require('../vendor/autoload.php');
 
+use Symfony\Component\HttpFoundation\Response;
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
@@ -23,10 +25,11 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/ping ', function() use($app) {
-  $data = array( 'alive' => true);
-   $data->headers->set('Content-Type', 'application/json');
+
+  	$response = new Response(json_encode(array('alive' => true)));
+	$response->headers->set('Content-Type', 'application/json');
 	//return $response;
-	return json_encode($data);
+	return $response;
 });
 
 $app->get('/minesweeper ', function() use($app) {
