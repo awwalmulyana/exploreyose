@@ -22,4 +22,10 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
+
+$app->get('/minesweeper ', function() use($app) {
+  return $app['twig']->render('minesweeper.twig');
+});
+
+
 $app->run();
