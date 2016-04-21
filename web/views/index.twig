@@ -6,4 +6,19 @@
 <a id="repository-link" target="_blank" href="https://github.com/bioit-awwal/exploreyose/blob/master/README.md">Yose Readme</a>
 <b>Hello Yose</b>
 <input id="astroport-name" type="button" text="Contact Me" value="Contact Me"><br/>
+
+<ul>
+	<li id="gate-1"><p id="ship-1"></p></li>
+	<li id="gate-2"><p id="ship-2"></p></li>
+	<li id="gate-3"><p id="ship-3"></p></li>
+</ul>
+
+<label> Ship </label> <input type="text" id="ship"/><button id="dock" text="dock">Dock</button>
+
+<script>
+	$('#dock').on('click',function(){
+		var value = $("#ship").val();
+		$("#ship-1").html(value);
+	})
+</script>
 {% endblock %}
