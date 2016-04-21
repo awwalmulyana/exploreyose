@@ -32,6 +32,10 @@ $app->get('/ping ', function() use($app) {
 	return $response;
 });
 
+$app->get('/astroport', function() use($app) {
+  return $app['twig']->render('index.twig');
+});
+
 $app->get('/minesweeper ', function() use($app) {
   return $app['twig']->render('minesweeper.twig');
 });
