@@ -1,5 +1,7 @@
 <?php
+$arr =  array("alive"  => true  );
 
+echo json_encode($arr['alive']);
 
 ?>
 <html>
