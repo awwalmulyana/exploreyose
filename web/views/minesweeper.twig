@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% set columns = 3 %}
+{% for name in names %}
+    {% if loop.first or loop.index0 is divisibleby(columns) %}
+        <tr>
+    {% endif %}
+
+    <td>{{ name }}</td>
+
+    {% if loop.last and loop.index is not divisibleby(columns) %}
+        {% for n in range(low=columns - (loop.index % columns), high=1, step=-1) %}
+            <td>&nbsp;</td>
+        {% endfor %}
+    {% endif %}
+    {% if loop.last or loop.index is divisibleby(columns) %}
+        </tr>
+    {% endif %}
+{% endfor %}
