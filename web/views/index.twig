@@ -40,7 +40,7 @@
 			gateShip.removeClass("hidden").addClass("visible");			
 		}
 	})
-	$('#ship').on("keydown", function(){
+	$('#ship').on("keypress", function(){
 		var classCss= gateShip.attr('class');
 		if (classCss == "visible"){
 			gateShip.removeClass("visible").addClass("hidden");
