@@ -34,16 +34,16 @@
 		}
 
 		var classCss2= gateShip.attr('class');
-		if(classCss2 == "docked" ){
-			gateShip.removeClass("docked").addClass("hidden");
+		if(classCss2 == "visible" ){
+			gateShip.removeClass("visible").addClass("hidden");
 		}else {
-			gateShip.removeClass("hidden").addClass("docked");			
+			gateShip.removeClass("hidden").addClass("visible");			
 		}
 	})
 	$('#ship').on("keydown", function(){
 		var classCss= gateShip.attr('class');
-		if (classCss == "docked"){
-			gateShip.removeClass("docked").addClass("hidden");
+		if (classCss == "visible"){
+			gateShip.removeClass("visible").addClass("hidden");
 		}
 	});
 </script>
