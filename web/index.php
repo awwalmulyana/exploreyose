@@ -38,28 +38,28 @@ $app->get('/astroport', function() use($app) {
 });
 
 $app->get('/minesweeper ', function() use($app) {
-  //return $app['twig']->render('minesweeper.twig');
-    $test =  '<p id="title">Minesweeper</p><br>';
-    $test .=  '<table border="1" width="300px" height="300px">';
-for($i = 1; $i < 9; $i++){
-    $test .= '<tr>';
-    for($x = 1; $x < 9; $x++){
-        $test .= '<td id="cell-'.$i.'x'.$x.'"></td>';
-    }
-    $test .= '</tr>';
-}
-$test .= '</table>';
-return $test;
+  require('../web/views/minesweeper.php');
+
+  return '';
 });
 
 $app->get('/primeFactors', function() use($app) {
   //return $app['twig']->render('minesweeper.twig');
-    $ok = $_GET['number'];
-//return calculation();
-    $number = $ok;
-    $calculation = calculation($number);
-    $response = new Response(json_encode(array('number' => intval($ok),'decomposition' => $calculation)));
-    $response->headers->set('Content-Type', 'application/json');
+    if(!isset($_GET['number'])){
+        $response = "No numbers with assinged value in URL";
+    }
+    else{
+        if(!intval($_GET['number'])){
+            $calculation = calculation($_GET['number']);
+            $response = new Response(json_encode(array('number' => $_GET['number'],'error' => 'not a number')));
+            $response->headers->set('Content-Type', 'application/json');
+        }
+        else {
+            $calculation = calculation($_GET['number']);
+            $response = new Response(json_encode(array('number' => intval($_GET['number']),'decomposition' => $calculation)));
+            $response->headers->set('Content-Type', 'application/json');
+        }
+    }
 	//return $response;
     return $response;
 });

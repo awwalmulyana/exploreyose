@@ -1,13 +1,35 @@
 <?php
-$row = 8;
-$column = 8;
- echo '<table>';
-for($i = 0; $i < 8; $i++){
-    echo '<tr>';
-    for($x = 0; $x < 8; $x++){
-        echo '<td id="'.$i.'x'.$x.'"></td>';
+$tableGrid =  '<p id="title">Minesweeper</p><br>';
+$tableGrid .=  '<table border="1" width="300px" height="300px">';
+for($i = 1; $i < 9; $i++){
+    $tableGrid .= '<tr>';
+    for($x = 1; $x < 9; $x++){
+        /*if($i == 3 && $x == 6){
+            $class = "bomb";
+        }
+        else{
+            $class = "empty";
+        }*/
+        $tableGrid .= '<td id="cell-'.$i.'x'.$x.'"
+            onclick="load(this.id)"></td>';
     }
-    echo '</tr>';
+    $tableGrid .= '</tr>';
 }
-echo '</table>';
+$tableGrid .= '</table>';
+
+echo $tableGrid;
+
 ?>
+<script>
+    function load(cellId){
+        var cellAttr = document.getElementById(cellId);
+        //alert(cellId == "cell-3x6");
+        if(cellId == "cell-3x6"){
+            cellAttr.className = "lost";
+            cellAttr.style.backgroundColor = "red";
+        }
+        //if (cellAttr.className == "bomb") {
+            //cellAttr.style.backgroundColor = "red";
+        //}
+    }
+</script>
