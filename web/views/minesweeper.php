@@ -10,7 +10,8 @@ for($i = 1; $i < 9; $i++){
         else{
             $class = "empty";
         }
-        $tableGrid .= '<td class="'.$class.'" id="cell-'.$i.'x'.$x.'" onclick="load(this.id)"></td>';
+        $tableGrid .= '<td class="'.$class.'" id="cell-'.$i.'x'.$x.'"
+            onclick="load(this.id)"></td>';
     }
     $tableGrid .= '</tr>';
 }
