@@ -40,11 +40,11 @@
 			gateShip.removeClass("hidden").addClass("docked");			
 		}
 	})
-	// $('#ship').on("keyup", function(){
-	// 	var classCss= gateShip.attr('class');
-	// 	if (classCss == "docked"){
-	// 		gateShip.removeClass("docked").addClass("hidden");
-	// 	}
-	// });
+	$('#ship').on("keydown", function(){
+		var classCss= gateShip.attr('class');
+		if (classCss == "docked"){
+			gateShip.removeClass("docked").addClass("hidden");
+		}
+	});
 </script>
 {% endblock %}
