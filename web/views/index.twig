@@ -27,11 +27,17 @@
 		var classCss= gateRef.attr('class');
 		if (classCss == "free"){
 			gateRef.removeClass("free").addClass("occupied");
-			gateShip.removeClass("hidden").addClass("docked");
+			
 			$('#info').html("The ship has been docked at gate 1");
 		} else{
 			gateRef.removeClass("occupied").addClass("free");
+		}
+
+		var classCss2= gateShip.attr('class');
+		if(classCss2 == "docked" ){
 			gateShip.removeClass("docked").addClass("hidden");
+		}else {
+			gateShip.removeClass("hidden").addClass("docked");			
 		}
 	})
 	// $('#ship').on("keyup", function(){
