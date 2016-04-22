@@ -5,7 +5,7 @@ for($i = 1; $i < 9; $i++){
     $tableGrid .= '<tr>';
     for($x = 1; $x < 9; $x++){
         if($i == 3 && $x == 6){
-            $class = "lost";
+            $class = "bomb";
         }
         else{
             $class = "empty";
@@ -24,7 +24,7 @@ echo $tableGrid;
     function load(cellId){
         var cellAttr = document.getElementById(cellId);
 
-        if (cellAttr.className == "lost") {
+        if (cellAttr.className == "bomb") {
             cellAttr.style.backgroundColor = "red";
         }      
     }
